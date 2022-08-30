@@ -3,4 +3,5 @@ bases:
 - components/test/base
 - components/test2/base
 - components/test3/base
+- components/test4/base
 kind: Kustomization

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test4
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test4
+    app.kubernetes.io/part-of: test-application
+  name: test4
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: test4
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: test4
+    spec:
+      containers:
+      - image: quay.io/sdouglas/release:default-test4
+        imagePullPolicy: Always
+        name: container-image
+        resources: {}
+status: {}
