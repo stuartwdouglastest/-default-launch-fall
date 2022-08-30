@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test3
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test3
+    app.kubernetes.io/part-of: test-application
+  name: test3
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: test3
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: test3
+    spec:
+      containers:
+      - image: quay.io/sdouglas/release:default-test3
+        imagePullPolicy: Always
+        name: container-image
+        resources: {}
+status: {}
